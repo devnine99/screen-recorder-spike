@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./blackbox:/opt/blackbox
-      - /tmp/.X11-unix/X99:/tmp/.X11-unix/X99
+      - /tmp/.X11-unix:/tmp/.X11-unix
     command: python run.py
     environment:
       FPS: "10"
