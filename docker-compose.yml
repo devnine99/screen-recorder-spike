@@ -11,7 +11,7 @@ services:
     command: python run.py
     environment:
       FPS: "10"
-      DISPLAY: ":0.0"
+#      DISPLAY: "localhost:1.0"
     privileged: true
     network_mode: host
     restart: always
