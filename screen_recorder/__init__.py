@@ -15,7 +15,7 @@ class ScreenRecorder:
         self._screen_options = {
             'logging': True,
             'monitor': 1,
-            'backend': 'gnome_dbus',
+            # 'backend': 'gnome_dbus',
         }
         self._screen = self._get_screen()
         self._writer_options = {
