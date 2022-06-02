@@ -13,4 +13,5 @@ services:
       FPS: "10"
       DISPLAY: ":0.0"
     privileged: true
+    network_mode: host
     restart: always
