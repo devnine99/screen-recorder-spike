@@ -12,6 +12,6 @@ services:
     command: python run.py
     environment:
       DISPLAY: unix${DISPLAY}
-#    privileged: true
+    privileged: true
 #    network_mode: host
     restart: always
