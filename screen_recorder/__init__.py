@@ -63,6 +63,7 @@ class ScreenRecorder:
         return WriteGear(**self._writer_options, output_filename=self._get_output_filename())
 
     def _get_output_filename(self):
+        return 'blackbox'
         return f'blackbox/{self._get_or_create_dir()}'
 
     def _get_or_create_dir(self):
