@@ -67,8 +67,8 @@ class ScreenRecorder:
         return self._get_or_create_dir()
 
     def _get_or_create_dir(self):
-        hour_dir_name = self._file_time.strftime("%Y%m%d%H")
-        dir_path = f'{self._dir_name}/{hour_dir_name}'
+        dir_path = f'{self._dir_name}/{self._file_time.strftime("%Y%m%d%H")}'
+        dir_path = f'{self._dir_name}'
         abs_dis_path = os.path.abspath(dir_path)
         os.makedirs(abs_dis_path, exist_ok=True)
         return dir_path
