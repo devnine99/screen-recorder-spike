@@ -8,6 +8,7 @@ services:
     volumes:
       - ./blackbox:/opt/blackbox
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - /root/.Xauthority:/root/.Xauthority
     command: python run.py
     environment:
       FPS: "10"
@@ -15,3 +16,5 @@ services:
     privileged: true
     network_mode: host
     restart: always
+
+# http://bahndal.egloos.com/534415
