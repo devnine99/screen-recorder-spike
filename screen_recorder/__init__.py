@@ -9,8 +9,8 @@ from vidgear.gears import (
 
 class ScreenRecorder:
     def __init__(self):
-        # self._fps = int(os.getenv('FPS', '15'))
-        # self._frame_per_second = 1 / self._fps
+        self._fps = int(os.getenv('FPS', '30'))
+        self._frame_per_second = 1 / self._fps
         self._cached_frame = None
         self._save_time = 0
         self._screen_options = {
@@ -21,7 +21,7 @@ class ScreenRecorder:
         self._writer_options = {
             'logging': True,
             'compression_mode': True,
-            '-input_framerate': 25.0,
+            '-input_framerate': self._fps,
             '-vcodec': 'libx264',
             '-crf': 0,
             '-preset': 'fast',
@@ -38,8 +38,8 @@ class ScreenRecorder:
             self._check_writer(now)
             cur = now.timestamp()
 
-            # if not self._check_fps(cur):
-            #     continue
+            if not self._check_fps(cur):
+                continue
             self._record(cur, self._screen.read())
 
     def _check_writer(self, now):
@@ -48,12 +48,12 @@ class ScreenRecorder:
             self._writer.close()
             self._writer = self._get_writer()
 
-    # def _check_fps(self, cur):
-    #     return cur - self._save_time > self._frame_per_second
+    def _check_fps(self, cur):
+        return cur - self._save_time > self._frame_per_second
 
     def _record(self, cur, frame):
         if frame is not None:
-            # self._save_time = cur
+            self._save_time = cur
             self._writer.write(frame)
 
     def _get_screen(self):
