@@ -9,6 +9,7 @@ from vidgear.gears import (
 
 class ScreenRecorder:
     def __init__(self):
+        self._dir_name = 'blackbox'
         self._fps = int(os.getenv('FPS', '30'))
         self._frame_per_second = 1 / self._fps
         self._cached_frame = None
@@ -64,10 +65,9 @@ class ScreenRecorder:
 
     def _get_output_filename(self):
         return self._get_or_create_dir()
-        return f'blackbox/{self._get_or_create_dir()}'
 
     def _get_or_create_dir(self):
-        dir_name = self._file_time.strftime("%Y%m%d%H")
-        abs_dis_path = os.path.abspath(f'blackbox')
-        # os.makedirs(abs_dis_path, exist_ok=True)
+        hour_dir_name = self._file_time.strftime("%Y%m%d%H")
+        abs_dis_path = os.path.abspath(f'{self._dir_name}/{hour_dir_name}')
+        os.makedirs(abs_dis_path, exist_ok=True)
         return abs_dis_path
