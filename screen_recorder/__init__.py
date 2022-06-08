@@ -15,12 +15,12 @@ class ScreenRecorder:
         self._screen_options = {
             'logging': True,
             'monitor': 1,
-            'backend': 'gnome_dbus',
+            # 'backend': 'gnome_dbus',
         }
         self._screen = self._get_screen()
         self._writer_options = {
             'logging': True,
-            'compression_mode': False,
+            'compression_mode': True,
             'fps': self._fps,
             '-vcodec': 'libx264',
             '-crf': 0,
