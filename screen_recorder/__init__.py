@@ -20,7 +20,7 @@ class ScreenRecorder:
         self._screen = self._get_screen()
         self._writer_options = {
             'logging': True,
-            'compression_mode': True,
+            'compression_mode': False,
             'fps': self._fps,
             '-vcodec': 'libx264',
             '-crf': 0,
