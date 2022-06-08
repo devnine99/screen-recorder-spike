@@ -6,12 +6,12 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /home/avikus/app/screen-recorder/blackbox:/opt/screen-recorder/blackbox
+      - ./blackbox:/opt/screen-recorder/blackbox
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /root/.Xauthority:/root/.Xauthority
     command: python run.py
     environment:
       DISPLAY: unix${DISPLAY}
-    privileged: true
+#    privileged: true
 #    network_mode: host
     restart: always
