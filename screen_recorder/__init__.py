@@ -9,7 +9,8 @@ from vidgear.gears import (
 
 class ScreenRecorder:
     def __init__(self):
-        self._fps = 1 / int(os.getenv('FPS', '15'))
+        self._fps = int(os.getenv('FPS', '15'))
+        self._frame_per_second = 1 / self._fps
         self._cached_frame = None
         self._save_time = 0
         self._screen_options = {
@@ -49,7 +50,7 @@ class ScreenRecorder:
             self._writer = self._get_writer()
 
     def _check_fps(self, cur):
-        return cur - self._save_time > self._fps
+        return cur - self._save_time > self._frame_per_second
 
     def _record(self, cur, frame):
         if frame is not None:
