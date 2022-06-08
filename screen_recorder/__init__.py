@@ -62,4 +62,4 @@ class ScreenRecorder:
         return WriteGear(**self._writer_options, output_filename=self._get_output_filename())
 
     def _get_output_filename(self):
-        return f'./blackbox/{self._file_time.strftime("%Y-%m-%d %H:%M")}.mp4'
+        return f'{self._file_time.strftime("%Y-%m-%d %H:%M")}.mp4'
