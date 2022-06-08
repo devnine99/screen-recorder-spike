@@ -8,7 +8,7 @@ services:
     volumes:
       - ./blackbox:/opt/blackbox
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - /root/.Xauthority:/root/.Xauthority
+      - ${HOME}/.Xauthority:${HOME}/.Xauthority
     command: python run.py
     environment:
       FPS: "10"
