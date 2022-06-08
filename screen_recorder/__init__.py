@@ -22,7 +22,7 @@ class ScreenRecorder:
         self._writer_options = {
             'logging': True,
             'compression_mode': True,
-            'fps': self._fps,
+            # 'fps': self._fps,
             '-vcodec': 'libx264',
             '-crf': 0,
             '-preset': 'fast',
