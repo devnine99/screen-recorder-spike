@@ -4,4 +4,4 @@ sudo docker run -it --rm \
   -v `pwd`/blackbox:/opt/blackbox \
   -e DISPLAY=unix${DISPLAY} \
   --name screen-recorder \
-  screen-recorder python run.py
+  screen-recorder bash
