@@ -63,4 +63,11 @@ class ScreenRecorder:
         return WriteGear(**self._writer_options, output_filename=self._get_output_filename())
 
     def _get_output_filename(self):
-        return f'blackbox/{self._file_time.strftime("%Y%m%d%H")}'
+        return f'blackbox/{self._get_or_create_dir()}'
+
+    def _get_or_create_dir(self):
+        dir_name = self._file_time.strftime("%Y%m%d%H")
+        abs_dis_path = os.path.abspath(dir_name)
+        if not os.path.exists(abs_dis_path):
+            os.mkdir(abs_dis_path)
+        return dir_name
