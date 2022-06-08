@@ -11,6 +11,7 @@ services:
       - /root/.Xauthority:/root/.Xauthority
     command: python run.py
     environment:
+      FPS: 30
       DISPLAY: unix${DISPLAY}
     privileged: true
 #    network_mode: host
