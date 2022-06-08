@@ -67,7 +67,7 @@ class ScreenRecorder:
 
     def _get_or_create_dir(self):
         dir_name = self._file_time.strftime("%Y%m%d%H")
-        abs_dis_path = os.path.abspath(dir_name)
+        abs_dis_path = os.path.abspath(f'blackbox/{dir_name}')
         if not os.path.exists(abs_dis_path):
             os.mkdir(abs_dis_path)
         return dir_name
