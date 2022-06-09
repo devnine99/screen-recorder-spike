@@ -10,8 +10,9 @@ services:
       - ./media:/opt/screen-recorder/media
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /root/.Xauthority:/root/.Xauthority
-    command: python run.py
+    command: source run.sh
     environment:
       FPS: 30
       DISPLAY: unix${DISPLAY}
+      MEDIA_DURATION: 7
     restart: always
