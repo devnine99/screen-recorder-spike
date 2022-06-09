@@ -10,8 +10,8 @@ services:
       - ./media:/opt/screen-recorder/media
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /root/.Xauthority:/root/.Xauthority
-#    command: python run.py
-    command: ./run.sh
+    command: python run.py
+#    command: ./run.sh
     environment:
       FPS: 30
       DISPLAY: unix${DISPLAY}
