@@ -64,11 +64,10 @@ class ScreenRecorder:
         return WriteGear(**self._writer_options, output_filename=self._get_output_filename())
 
     def _get_output_filename(self):
-        return self._get_or_create_dir()
+        return f'{self._get_or_create_dir()}/{self._file_time.strftime("%Y%m%d%H%M")}.mp4'
 
     def _get_or_create_dir(self):
         dir_path = f'{self._dir_name}/{self._file_time.strftime("%Y%m%d%H")}'
-        # dir_path = f'{self._dir_name}'
         abs_dis_path = os.path.abspath(dir_path)
         os.makedirs(abs_dis_path, exist_ok=True)
-        return dir_path
+        return abs_dis_path
