@@ -18,14 +18,14 @@ class ScreenRecorder:
         self._cached_frame = None
         self._save_time = 0
         self._screen_options = {
-            'logging': True,
+            # 'logging': True,
             'monitor': 1,
         }
         self._screen = self._get_screen()
         self._writer_options = {
-            'logging': True,
+            # 'logging': True,
             'compression_mode': True,
-            '-input_framerate': self._fps,
+            # '-input_framerate': self._fps,
             '-vcodec': 'libx264',
             '-crf': 0,
             '-preset': 'fast',
