@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     user: "1000"
     volumes:
-      - ./blackbox:/opt/screen-recorder/blackbox
+      - ./media:/opt/screen-recorder/media
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /root/.Xauthority:/root/.Xauthority
     command: python run.py
