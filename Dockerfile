@@ -8,5 +8,5 @@ RUN mkdir /opt/screen-recorder
 WORKDIR /opt/screen-recorder
 ADD . /opt/screen-recorder
 RUN pip install -r requirements.txt
-RUN chmod 0664 ./run.sh
+RUN chown 1000:1000 ./run.sh
 # RUN echo "* * * * * find /opt/screen-recorder/media/* -type d -cmin +60 -exec rm -rf {} +" | crontab -
