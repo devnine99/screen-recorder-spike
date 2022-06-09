@@ -12,6 +12,7 @@ services:
       - /root/.Xauthority:/root/.Xauthority
 #    command: python run.py
 #    command: ./run.sh
+    command: /bin/bash
     environment:
       FPS: 30
       DISPLAY: unix${DISPLAY}
