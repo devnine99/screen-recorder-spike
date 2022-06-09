@@ -1,5 +1,8 @@
 import os
-from datetime import datetime
+from datetime import (
+    datetime,
+    timedelta,
+)
 
 from vidgear.gears import (
     ScreenGear,
@@ -27,7 +30,7 @@ class ScreenRecorder:
             '-crf': 0,
             '-preset': 'fast',
         }
-        self._file_time = datetime.now()
+        self._file_time = datetime.now() + timedelta(hours=9)
         self._writer = self._get_writer()
 
     def run(self):
@@ -35,7 +38,7 @@ class ScreenRecorder:
 
     def _main_loop(self):
         while True:
-            now = datetime.now()
+            now = datetime.now() + timedelta(hours=9)
             self._check_writer(now)
             cur = now.timestamp()
 
