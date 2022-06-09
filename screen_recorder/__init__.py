@@ -12,18 +12,16 @@ from vidgear.gears import (
 
 class ScreenRecorder:
     def __init__(self):
-        self._dir_name = 'blackbox'
+        self._dir_name = 'media'
         self._fps = int(os.getenv('FPS', '30'))
         self._frame_per_second = 1 / self._fps
         self._cached_frame = None
         self._save_time = 0
         self._screen_options = {
-            # 'logging': True,
             'monitor': 1,
         }
         self._screen = self._get_screen()
         self._writer_options = {
-            # 'logging': True,
             'compression_mode': True,
             '-input_framerate': self._fps,
             '-vcodec': 'libx264',
