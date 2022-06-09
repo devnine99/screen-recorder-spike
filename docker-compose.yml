@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    user: "1000"
     volumes:
       - ./blackbox:/opt/screen-recorder/blackbox
       - /tmp/.X11-unix:/tmp/.X11-unix
