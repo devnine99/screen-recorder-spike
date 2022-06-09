@@ -10,4 +10,4 @@ ADD . /opt/screen-recorder
 RUN pip install -r requirements.txt
 
 RUN echo "* * * * * find /opt/screen-recorder/media/* -type d -cmin +60 -exec rm -rf {} +" | crontab -
-RUN systemctl cron enable
+RUN systemctl crontab enable
