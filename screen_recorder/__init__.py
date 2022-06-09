@@ -18,19 +18,19 @@ class ScreenRecorder:
         self._cached_frame = None
         self._save_time = 0
         self._screen_options = {
-            # 'logging': True,
+            'logging': True,
             'monitor': 1,
         }
         self._screen = self._get_screen()
         self._writer_options = {
-            # 'logging': True,
+            'logging': True,
             'compression_mode': True,
-            # '-input_framerate': self._fps,
+            '-input_framerate': self._fps,
             '-vcodec': 'libx264',
             '-crf': 0,
             '-preset': 'fast',
         }
-        self._file_time = datetime.now()
+        self._file_time = datetime.now() + timedelta(hours=9)
         self._writer = self._get_writer()
 
     def run(self):
@@ -38,7 +38,7 @@ class ScreenRecorder:
 
     def _main_loop(self):
         while True:
-            now = datetime.now()
+            now = datetime.now() + timedelta(hours=9)
             self._check_writer(now)
             cur = now.timestamp()
 
