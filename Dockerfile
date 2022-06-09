@@ -9,5 +9,4 @@ WORKDIR /opt/screen-recorder
 ADD . /opt/screen-recorder
 RUN pip install -r requirements.txt
 
-RUN echo "0 * * * * find /opt/screen-recorder/media/* -name '*.mp4' -cmin +1 rm {} +" | crontab -
-CMD service cron start
+RUN echo "0 * * * * find /opt/screen-recorder/media/* -name '*.mp4' -cmin +1 -exec rm {} +" | crontab -
