@@ -5,16 +5,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-#    user: "1000:1000"
+    user: "1000:1000"
     volumes:
       - ./media:/opt/screen-recorder/media
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /root/.Xauthority:/root/.Xauthority
-#    command: python run.py
-    command: ./run.sh
+    command: python run.py
     environment:
       FPS: 30
       DISPLAY: unix${DISPLAY}
       MEDIA_DURATION: 7
-    privileged: true
     restart: always
