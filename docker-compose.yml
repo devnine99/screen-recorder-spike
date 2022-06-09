@@ -10,7 +10,12 @@ services:
       - ./media:/opt/screen-recorder/media
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /root/.Xauthority:/root/.Xauthority
-    command: ./run.sh
+    command:
+      - /bin/bash
+      - -c
+      - |
+        service cron start
+        python run.py
     environment:
       FPS: 30
       DISPLAY: unix${DISPLAY}
