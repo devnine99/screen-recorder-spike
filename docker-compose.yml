@@ -14,5 +14,4 @@ services:
       FPS: 30
       DISPLAY: unix${DISPLAY}
       MEDIA_DURATION: 1
-    privileged: true
     restart: always
