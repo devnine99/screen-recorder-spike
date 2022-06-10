@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    user: "1000:1000"
     volumes:
       - ./media:/opt/screen-recorder/media
       - /tmp/.X11-unix:/tmp/.X11-unix
@@ -15,4 +14,5 @@ services:
       FPS: 30
       DISPLAY: unix${DISPLAY}
       MEDIA_DURATION: 1
+    privileged: true
     restart: always
