@@ -10,5 +10,4 @@ ADD . /opt/screen-recorder
 RUN pip install -r requirements.txt
 
 RUN chmod 777 ./run.sh
-RUN useradd 1000
-USER 1000
+RUN chmod 777 /var/run/crond.pid
