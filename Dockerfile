@@ -9,6 +9,6 @@ WORKDIR /opt/screen-recorder
 ADD . /opt/screen-recorder
 RUN pip install -r requirements.txt
 
-RUN chown -R nobody:nogroup /opt/screen-recorder
 RUN chmod 777 ./run.sh
-USER nobody
+RUN useradd 1000
+USER 1000
