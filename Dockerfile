@@ -9,6 +9,5 @@ WORKDIR /opt/screen-recorder
 ADD . /opt/screen-recorder
 RUN pip install -r requirements.txt
 
-RUN chown -R nobody:nogroup /opt/screen-recorder
-USER nobody
-# RUN echo "* * * * * find /opt/screen-recorder/media/* -type d -cmin +60 -exec rm -rf {} +" | crontab -
+RUN chown -R 1000:1000 /opt/screen-recorder
+USER 1000
