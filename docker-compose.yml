@@ -13,5 +13,5 @@ services:
     environment:
       FPS: 30
       DISPLAY: unix${DISPLAY}
-      MEDIA_DURATION: 1
+      MEDIA_DURATION: 60
     restart: always
