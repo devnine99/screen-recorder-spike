@@ -7,7 +7,5 @@ RUN echo "ForwardX11 yes" >> /etc/ssh/ssh_config
 RUN mkdir /opt/screen-recorder
 WORKDIR /opt/screen-recorder
 ADD . /opt/screen-recorder
+RUN chown -R ./media
 RUN pip install -r requirements.txt
-
-RUN chmod 777 ./run.sh
-RUN chmod 777 /var/run/crond.pid
